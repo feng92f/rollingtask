@@ -1,0 +1,32 @@
+<td>
+  <span class="content">#<%= id %></span>
+</td>
+<td>
+  <span><%= type %></span>
+</td>
+<td>
+  <span class="job-<%= state %>"><%= state %></span>
+</td>
+<td class='mobile-hide'>
+  <% if(attempts.remaining == null){ %>
+  <% }else{ %>
+      <%= error %><br/>
+      <%= attempts.made %>/<%= attempts.max %>
+  <% } %>
+</td>
+<td class='mobile-hide'>
+  <span><%= progress %>%</span>
+</td>
+<td class='mobile-hide'>
+  <span><%= moment(created_at*1).startOf('hour').fromNow() %></span>
+</td>
+<td class='mobile-hide'>
+  <span><%= moment(updated_at*1).startOf('hour').fromNow() %></span>
+</td>
+<td>
+  <% if(state == 'active' || state == 'failed'){ %>
+    <a class='action-button js-redo'>redo</a>
+  <% } %>
+  <a class='action-button js-view' >View</a>
+
+</td>

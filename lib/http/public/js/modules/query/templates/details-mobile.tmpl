@@ -1,0 +1,165 @@
+<% if(id == 0){ %>
+<div class="modal active  query">
+
+        <div class="query-item-header">
+            <a class="action-button js-close">Close</a>
+        </div>
+
+        <header>
+            <h3>
+              <span class="content"></span>
+              <div class="word_pro">
+              </div>
+            </h3>
+        </header>
+
+</div>
+<% } %>
+
+<% if(id == 1){ %>
+
+<div class="modal active   query">
+
+        <div class="query-item-header">
+            <a class="action-button js-close">Close</a>
+        </div>
+
+        <header>
+            <h3>
+              <span class="content"><%= item %></span>
+              <div class="word_pro">
+                  <% _.each(pros,function(pro){ %>
+                    <%= pro.dt.toLowerCase()  %>/<%= pro.dd %>/
+                  <% }) %>
+              </div>
+            </h3>
+        </header>
+
+
+        <div class="query-content" id='query-main'>
+                <% if(defs.length > 0){ %>
+                <h4>Definitions / 定义</h4>
+                <div class="tab-pane active entry-basic" id="tab1">
+
+                    <div style=''>
+
+                        <% _.each(defs,function(def){ %>
+
+                           <h6 class=''><%= def.dt  %>.</h6>
+                              <ol>
+                              <% _.each(def.dds,function(dd){ %>
+                                  <li>
+                                  <p class=''> <%= dd.dd  %></p>
+                                  <%if(dd.ex){%>
+                                    <p class='ex-en'>- <%= dd.ex.en  %></p>
+                                    <p class='ex-cn'>- <%= dd.ex.cn  %></p>
+                                  <%}%>
+                                  </li>
+                              <% }) %>
+                              </ol>
+                        <% }) %>
+
+                    </div>
+
+
+
+
+                </div><!--//tab1-->
+                <% } %>
+
+                <h4>Phrases / 短语</h4>
+                <% if(phrases.length > 0){ %>
+                <div class="tab-pane entry-phrases" id="tab2">
+                    <div style=''>
+                        <% _.each(phrases,function(ph){ %>
+                              <p class=''> <%= ph.en %> <%= ph.cn %></p>
+                        <% }) %>
+                    </div>
+                </div><!--//tab2-->
+                <% } %>
+
+
+                <h4><%= (infs.length)*1  %> 变型</h4>
+                <div class="tab-pane entry-coll" id="tab4">
+
+                        <% _.each(infs,function(inf){ %>
+                           <p class=''>
+                           <h6><%= inf.dt  %></h6>
+                           <span class=''>
+                           <%= inf.dd  %>
+                           </span>
+                           </p>
+                        <% }) %>
+                </div><!--//tab4-->
+
+
+                <h4><%= (colls.length)*1  %> 搭配</h4>
+                <div class="tab-pane entry-coll" id="tab4">
+                        <% _.each(colls,function(coll){ %>
+                           <p class=''><h6><%= coll.dt  %></h6>
+                              <% _.each(coll.dds,function(dd){ %>
+                                  <p class=''>
+                                    <%= dd  %>
+                                  </p>
+                              <% }) %>
+                           <br/>
+                           </p>
+                        <% }) %>
+
+                </div><!--//tab4-->
+
+
+                <% if(thes.length > 0){ %>
+                  <h4><%= thes.length %> 同义词</h4>
+                  <div class="tab-pane entry-thes" id="tab5">
+
+                    <div style=''>
+                    <% _.each(thes,function(the){ %>
+                        <h6><%= the.dt  %></h6>
+                        <% _.each(the.dds,function(dd){ %>
+                          <p class=''><%= dd  %></p>
+                          <% }) %>
+                        <% }) %>
+                    </div>
+
+                  </div><!--//tab5-->
+                  <br/>
+                <% } %>
+
+                <% if(sens.length > 0){ %>
+                <h4><%= sens.slice(0,7).length %> 例句</h4>
+                <div class="tab-pane entry-sents" id="tab6">
+
+                   <% _.each(sens,function(sen){ %>
+                                  <p class='en'>-  <%= sen.en.replace('**','<b style="color:green">').replace('##','</b>')   %></p>
+                                  <p class='cn'>-  <%= sen.cn.replace('**','<b style="color:green">').replace('##','</b>')    %></p>
+                                  <br/>
+                   <% }) %>
+
+                </div><!--//tab6-->
+                <% } %>
+
+                <% if(mds.length > 0){ %>
+                <h4>定义</h4>
+                <div class="tab-pane active  entry-sents" id="tab7">
+                  <p style='white-space: pre-wrap;'><%= mds %></p>
+                </div><!--//tab7-->
+                <% } %>
+
+
+                <% if(defs.length > 0){ %>
+                <h4>链接</h4>
+                <div class="tab-pane entry-links" id="tab8">
+                  <p><a href='http://www.merriam-webster.com/dictionary/<%= item %>' target='_blank'>Merriam-webster.com</a></p>
+                  <p><a href='http://oxforddictionaries.com/definition/english/<%= item %>' target='_blank'>Oxforddictionaries.com</a></p>
+                  <p><a href='http://www.wordnik.com/words/<%= item %>' target='_blank'>Wordnik.com</a></p>
+                  <p><a href='http://www.thefreedictionary.com/<%= item %>' target='_blank'>Thefreedictionary.com</a></p>
+                  <p><a href='http://dictionary.reference.com/browse/<%= item %>' target='_blank'>Reference.com</a></p>
+                </div><!--//tab8-->
+                <% } %>
+
+        </div><!--content-->
+</div>
+
+<% } %>
+

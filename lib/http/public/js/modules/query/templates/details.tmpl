@@ -1,0 +1,165 @@
+<div class="modal">
+
+        <div class="query-item-header">
+          <a class="action-button js-close">Close</a>
+        </div>
+
+        <div class="query-content" id='query-main'>
+
+        <div class="query-item">
+            <h2 class=''><%= item %> <i class='icon-volume-up icon-white icon-speak'></i>
+            <% _.each(pros,function(pro){ %>
+                <span class='pros'> <%= pro.dt.toLowerCase()  %>/<%= pro.dd %>/</span>
+            <% }) %>
+            </h2>
+        </div>
+
+        <div class="tabbable"> <!-- Only required for left/right tabs -->
+            <ul class="">
+                <% if(defs.length > 0){ %>
+                  <li class="active"><a href="#tab1" data-toggle="tab">基础</a></li>
+                <% } %>
+
+                <% if(phrases.length > 0){ %>
+                <li><a href="#tab2" data-toggle="tab"><%= phrases.length %> 短语</a></li>
+                <% } %>
+
+                <% if(infs.length + colls.length > 0){ %>
+                <li><a href="#tab4" data-toggle="tab"><%= (infs.length + colls.length)*1  %> 变型&搭配</a></li>
+                <% } %>
+
+                <% if(thes.length > 0){ %>
+                  <li><a href="#tab5" data-toggle="tab"><%= thes.length %> 同义词</a></li>
+                <% } %>
+
+
+                <% if(sens.length > 0){ %>
+                <li><a href="#tab6" data-toggle="tab"><%= sens.slice(0,7).length %> 例句</a></li>
+                <% } %>
+
+
+                <% if(mds.length > 0){ %>
+                  <li><a class="active" href="#tab7" data-toggle="tab">定义</a></li>
+                <% } %>
+
+                <% if(defs.length > 0){ %>
+                  <li><a href="#tab8" data-toggle="tab"> 链接</a></li>
+                <% } %>
+
+            </ul>
+            <div class="tab-content">
+                <% if(defs.length > 0){ %>
+                <div class="tab-pane active entry-basic" id="tab1">
+
+                    <div style=''>
+
+                        <% _.each(defs,function(def){ %>
+
+                           <span class=''><%= def.dt  %>.</span>
+                              <ol>
+                              <% _.each(def.dds,function(dd){ %>
+                                  <li>
+                                  <p class=''> <%= dd.dd  %></p>
+                                  <%if(dd.ex){%>
+                                    <p class='ex-en'>- <%= dd.ex.en  %></p>
+                                    <p class='ex-cn'>- <%= dd.ex.cn  %></p>
+                                  <%}%>
+                                  </li>
+                              <% }) %>
+                              </ol>
+                        <% }) %>
+
+                    </div>
+
+
+
+
+                </div><!--//tab1-->
+                <% } %>
+
+                <div class="tab-pane entry-phrases" id="tab2">
+                    <div style=''>
+                        <% _.each(phrases,function(ph){ %>
+                              <p class=''> <%= ph.en %> <%= ph.cn %></p>
+                        <% }) %>
+                    </div>
+
+
+
+                </div><!--//tab2-->
+
+                <div class="tab-pane entry-coll" id="tab4">
+
+                        <p>变形:</p>
+                        <% _.each(infs,function(inf){ %>
+
+                           <p class=''>
+                           <%= inf.dt  %>
+                           <span class=''>
+                           <%= inf.dd  %>
+                           </span>
+                           </p>
+                        <% }) %>
+
+                        <p>搭配:</p>
+                        <% _.each(colls,function(coll){ %>
+
+                           <p class=''><%= coll.dt  %>
+                              <% _.each(coll.dds,function(dd){ %>
+                                  <span class=''><%= dd  %> ; </span>
+                              <% }) %>
+                           </p>
+                        <% }) %>
+
+
+
+                </div><!--//tab4-->
+
+                <div class="tab-pane entry-thes" id="tab5">
+
+                    <div style=''>
+                        <% _.each(thes,function(the){ %>
+                           <p class=''><%= the.dt  %>
+                              <% _.each(the.dds,function(dd){ %>
+                                  <p class=''><%= dd  %> ; </p>
+                              <% }) %>
+                           </p>
+                        <% }) %>
+                    </div>
+
+                </div><!--//tab5-->
+
+                <div class="tab-pane entry-sents" id="tab6">
+
+                   <% _.each(sens,function(sen){ %>
+                                  <p class='en'>-  <%= sen.en.replace('**','<b style="color:yellow">').replace('##','</b>')   %></p>
+                                  <p class='cn'>-  <%= sen.cn.replace('**','<b style="color:yellow">').replace('##','</b>')    %></p>
+                                  <br/>
+                   <% }) %>
+
+
+                </div><!--//tab6-->
+
+                <% if(mds.length > 0){ %>
+                <div class="tab-pane active  entry-sents" id="tab7">
+                  <p style='white-space: pre-wrap;'><%= mds %></p>
+                </div><!--//tab7-->
+                <% } %>
+
+
+                <% if(defs.length > 0){ %>
+                <div class="tab-pane entry-sents" id="tab8">
+                  <p><a style='color:#fff' href='http://www.merriam-webster.com/dictionary/<%= item %>' target='_blank'>Merriam-webster.com</a></p>
+                  <p><a style='color:#fff' href='http://oxforddictionaries.com/definition/english/<%= item %>' target='_blank'>Oxforddictionaries.com</a></p>
+                  <p><a style='color:#fff' href='http://www.wordnik.com/words/<%= item %>' target='_blank'>Wordnik.com</a></p>
+                  <p><a style='color:#fff' href='http://www.thefreedictionary.com/<%= item %>' target='_blank'>Thefreedictionary.com</a></p>
+                  <p><a style='color:#fff' href='http://dictionary.reference.com/browse/<%= item %>' target='_blank'>Reference.com</a></p>
+                </div><!--//tab8-->
+                <% } %>
+
+            </div><!--tab content-->
+
+        </div><!--tabs-->
+
+        </div><!--content-->
+</div>

@@ -1,0 +1,43 @@
+<div class="modal active  query">
+
+        <div class="query-item-header">
+            <a class="action-button js-close">Close</a>
+        </div>
+
+        <header>
+            <h3>
+              <span class="content">Job: #<%= id %> <%= type %></span>
+            </h3>
+        </header>
+
+
+        <section style='padding:10px'>
+
+                <p>Priority: <%= priority %></p>
+                <p>State: <%= state %></p>
+                <p>Created at: <%= created_at %></p>
+                <p>Updated at: <%= updated_at %></p>
+
+                <code>
+                    <% for(var i in data){%>
+                      <p><%= i %> : <%= data[i] %></p>
+                    <% }%>
+                </code>
+
+                <br/>
+                <br/>
+
+                <% if(error !== ''){ %>
+
+                <p style="color:red">Error: <%= error %></p>
+                <p style="color:red">Failed at: <%= failed_at %></p>
+                <p>Attempts.Remaining: <%= attempts.remaining %></p>
+                <p>Attempts.Max: <%= attempts.max %></p>
+                <p>Attempts.Made: <%= attempts.made %></p>
+
+                <% } %>
+
+        </section>
+
+
+</div>

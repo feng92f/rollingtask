@@ -1,0 +1,30 @@
+<div class="header">
+  <h4 id="logo">Rolling Tasks</h4>
+</div>
+
+<div class="frame smart" id="nav-frame">
+  <ul class="nav" id='nav-list'>
+
+      <li class="">
+        <a data-router="#!list"><span class="project_section_icon dates"></span> Queues<span class='badge'><%= inactiveCount %></span></a>
+      </li>
+
+      <li class="">
+        <a data-router="#!jobs/active/0..20/desc"><span class="project_section_icon updates"></span> Working<span class='badge'><%= activeCount %></span></a>
+      </li>
+
+      <li class="">
+        <a data-router="#!jobs/inactive/0..20/asc"><span class="project_section_icon documents"></span> Pending<span class='badge'><%= inactiveCount %></span></a>
+      </li>
+
+      <li class="">
+        <a data-router="#!jobs/complete/0..20/desc"><span class="project_section_icon inbox"></span> Completed<span class='badge'><%= completeCount %></span></a>
+      </li>
+
+      <li class="">
+        <a data-router="#!jobs/failed/0..200/desc"><span class="project_section_icon updates"></span> Failed<span class='badge'><%= failedCount %></span></a>
+      </li>
+
+  </ul>
+
+</div>

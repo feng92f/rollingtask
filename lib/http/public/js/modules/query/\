@@ -1,0 +1,40 @@
+define(['modules/query/templates','Backbone','Marionette', 'jquery', 'snap','sly'],function(Templates, Backbone, Marionette, $, Snap){
+
+  var DetailView = Marionette.ItemView.extend({
+    className:'query-inner',
+    template: Templates.Detail,
+    events:{
+      'click a' : "tab",
+      'click .js-close' : "cloze"
+    },
+    tab: function(e){
+      $(e.target).tab('show');
+    },
+    cloze: function(){
+      this.close();
+    },
+    onShow: function() {
+
+    }
+  });
+
+  var EmptyView = Marionette.ItemView.extend({
+    template: Templates.Empty,
+    className:'query-inner',
+    events:{
+      'click .js-close' : "cloze"
+    },
+    cloze: function(){
+      this.close();
+    },
+    onShow: function() {
+    }
+  });
+
+  return {
+    DetailView : DetailView,
+    EmptyView  : EmptyView
+  }
+
+
+});

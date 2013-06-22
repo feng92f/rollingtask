@@ -1,0 +1,44 @@
+.menu-button span {
+  font-size:24px;
+  color:#646464;
+}
+
+.toolbar-button{
+  padding: 4px;
+}
+
+a.action-button {
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+  transition: background-color .218s,border-color .218s,box-shadow .218s;
+  cursor: pointer;
+  height: 20px;
+  line-height: 20px;
+  padding: 5px 10px 5px 10px;
+  outline: none;
+  width: auto;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+  background-color: rgb(221, 75, 57);
+  border: none;
+  border-radius: 2px;
+  color:#fff;
+  text-decoration:none;
+  margin-right:5px;
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  text-shadow: none;
+}
+
+a.action-button:hover {
+  background-color: rgb(211, 65, 47);
+}
+
+a.normal {
+  background-color: whiteSmoke;
+  background-color: rgb(240,240,240);
+  color:#555;
+}
+a.normal:hover {
+  background-color: whiteSmoke;
+  color:#000;
+}
+
+
