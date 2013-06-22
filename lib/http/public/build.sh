@@ -18,6 +18,7 @@ mkdir $BASEDIR/deploy/css
 cp $BASEDIR/js/main-built.js $BASEDIR/deploy/js/main-built.js
 
 cp -R $BASEDIR/css $BASEDIR/deploy/
+cp -R $BASEDIR/fonts $BASEDIR/deploy/
 cp -R $BASEDIR/img $BASEDIR/deploy/img
 cp $BASEDIR/index.html $BASEDIR/deploy/index.html
 cp $BASEDIR/apple-touch-icon-precomposed.png $BASEDIR/deploy/apple-touch-icon-precomposed.png
@@ -45,6 +46,7 @@ rm $BASEDIR/deploy/index.html.bak
 find $BASEDIR/deploy -name .DS_Store -exec rm {} \;
 
 mv index.html index.ejs
+mv $BASEDIR/deploy/index.html  $BASEDIR/deploy/index.ejs
 
 echo "code rolling well"
 
