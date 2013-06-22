@@ -1,0 +1,239 @@
+.snap-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  z-index: 2;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+       -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+
+
+#inbox-list {
+  margin: 0;
+  margin-top: 2px;
+  padding: 0;
+  padding-top: 2px;
+  background: #f7f7f7;
+  padding-bottom:50px;
+}
+
+#pt-main{
+  background:rgb(29,29,29)
+}
+
+#inbox-list li{
+  position:relative;
+}
+
+#inbox-list .item{
+  padding:0px;
+  position:relative;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: 1px solid rgb(236, 236, 236);
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  vertical-align: middle;
+  color: rgb(64, 64, 64);
+  margin:3px;
+}
+
+#inbox-list .item span{
+  display: inline-block;
+  font-size: 13px;
+  line-height: 19px;
+  color:rgb(119,119,119);
+}
+
+#inbox-list .item .front{
+  position:relative;
+  background: #fff;
+  transition: opacity 2s linear;
+}
+
+#inbox-list .open-left  .front,#inbox-list .open-right  .front{
+  opacity: 0.98;
+}
+
+#inbox-list .item .back{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+
+#inbox-list .open-left .item .back h2{
+  color:#fff;
+  padding:10px;
+  float:right;
+  font-size:16px;
+}
+
+#inbox-list .open-left .item .back h3{
+  color:#fff;
+  padding-right:10px;
+  font-size:14px;
+  position:absolute;
+  bottom:1px;
+  right:1px;
+}
+
+#inbox-list .open-right .item .back h2{
+  color:#fff;
+  padding:10px;
+  float:left;
+  font-size:16px;
+}
+
+#inbox-list .open-right .item .back h3{
+  color:#fff;
+  padding-left:10px;
+  float:left;
+  font-size:14px;
+  position:absolute;
+  bottom:1px;
+  left:1px;
+}
+#inbox-list .open-top .item .back h2{
+  color:#fff;
+  padding:10px;
+  float:right;
+  font-size:16px;
+}
+
+#inbox-list .open-top .item .back h3{
+  color:#fff;
+  padding-right:10px;
+  font-size:14px;
+  position:absolute;
+  bottom:1px;
+  right:1px;
+}
+
+
+#inbox-list .open-left .item{
+  background:#27AE60 url("../images/icons/Clipboard@2x.png") no-repeat  10px 10px;
+}
+
+#inbox-list .open-top .item{
+  background:rgb(52, 73, 94) url("http://designmodo.com/wp-content/themes/designmodov2/flat-ui/images/ico-9.png") no-repeat  -20px 10px;
+  background-size:110px 110px;
+}
+
+#inbox-list .open-right .item{
+  background:#E74C3C url("../images/icons/Infinity-Loop@2x.png") no-repeat right -55px;
+}
+
+#inbox-list .front .content-inner{
+  padding:20px;
+  padding-top:5px;
+}
+
+#inbox-list .front .button-inner{
+  padding:10px;
+  float:right;
+}
+
+
+#inbox-list .front h4{
+  margin-top:0px;
+  padding:20px;
+  font-size:22px;
+  padding-top:7px;
+  padding-bottom:5px;
+  border-bottom:1px solid #f1f1f1;
+}
+
+#inbox-list .front h5{
+  padding:20px;
+  font-size:18px;
+  padding-top:7px;
+  padding-bottom:5px;
+  border-bottom:1px solid #f1f1f1;
+}
+
+#inbox-list .front a{
+  text-decoration:none;
+}
+
+
+
+/**
+ * List
+ **/
+.list-inner img.list-icon{
+  margin-left: -59px;
+  float: left;
+  vertical-align: top;
+  width: 56px;
+  height: 65px;
+  margin-top: -10px;
+}
+
+.list-inner ul{
+  padding-bottom: 50px;
+}
+
+.list-inner li{
+  display: block;
+  clear: both;
+  padding: 10px 15px 10px 20px;
+  text-shadow: 0 1px 0 white;
+}
+
+.list-inner h1 {
+  padding:15px;
+  padding-left:15px;
+  padding-bottom:0px;
+  margin-bottom:0px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.list-inner .items h3 {
+font-family: 'ProximaNova',"Helvetica Neue",helvetica,arial,sans-serif;
+font-weight:normal;
+margin: 0 0 2px;
+font-size: 18px;
+line-height: 20px;
+}
+
+.list-inner .items h4 {
+margin: 0 0 2px;
+font-weight: normal;
+font-size: 13px;
+line-height: 15px;
+color: rgb(170, 156, 132);
+}
+
+.list-inner .pill.actions {
+margin-right:5px;
+background: rgb(226, 233, 248);
+}
+
+.list-inner .pill {
+font-weight: normal;
+background: rgb(238, 238, 238);
+color: rgb(102, 102, 102);
+white-space: nowrap;
+display: inline-block;
+-webkit-border-radius: 12px;
+border-radius: 12px;
+padding: 2px 6px;
+font-size: 11px;
+line-height: 15px;
+vertical-align: top;
+margin: 5px 0 0;
+}
+
+

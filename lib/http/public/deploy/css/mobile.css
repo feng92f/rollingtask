@@ -1,0 +1,116 @@
+/*Design For Mobile*/
+@media only screen and (max-width: 960px) {
+
+        body{
+          background:#333;
+        }
+
+        #content{
+          top:0px;
+        }
+
+        .drop-shadow {
+          border:none;
+        }
+
+        .mobile-hide{
+          display:none;
+        }
+
+        .right-sidebar-wrapper {
+          display:none;
+        }
+
+        #main{
+          /* overflow: auto; */
+        }
+
+        .query-inner{
+          margin:0px;
+          height:100%;
+        }
+
+        .query-inner{
+        }
+
+        .list-inner .header a.action-button{
+          margin:10px;
+          display:block;
+        }
+
+        #detail-list{
+          /* margin-left:20px; */
+          margin-left:0px;
+        }
+
+        #inbox-list .front h4 {
+          padding-top:40px;
+        }
+
+        /* overflow: auto; */
+        #leftpanel{
+          background:#333;
+        }
+
+          #leftpanel a{
+            color:#eee;
+            font-size: 1.6em;
+            font-family: "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif;
+            font-weight: bold;
+          }
+
+        #panels {
+          background:rgb(50,50,50);
+        }
+
+        #panels > header h4 {
+            color:#fff;
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 0px;
+        }
+
+        .nav li a {
+          border-top:1px solid #404040;
+          /* border-bottom:1px solid  #393939; */
+        }
+
+        .nav li a:active {
+          background:rgb(50,50,50);
+        }
+
+        .nav li span.badge {
+          padding: 4px 9px 4px 9px;
+        }
+
+        #panels {
+          background:rgb(50,50,50);
+        }
+
+        #content {
+          background:rgb(50,50,50);
+        }
+
+        .left-sidebar-wrapper .header {
+          background:rgb(50,50,50);
+        }
+
+        .left-sidebar-wrapper .header h4{
+          color:#fff;
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
