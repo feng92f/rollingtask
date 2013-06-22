@@ -8,13 +8,6 @@
   <span class="job-<%= state %>"><%= state %></span>
 </td>
 <td class='mobile-hide'>
-  <% if(attempts.remaining == null){ %>
-  <% }else{ %>
-      <%= error %><br/>
-      <%= attempts.made %>/<%= attempts.max %>
-  <% } %>
-</td>
-<td class='mobile-hide'>
   <span><%= progress %>%</span>
 </td>
 <td class='mobile-hide'>
