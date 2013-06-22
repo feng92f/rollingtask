@@ -4,6 +4,9 @@ BASEDIR=$(dirname $0)
 
 #copy stuff to deploy folder
 
+
+mv index.ejs index.html
+
 echo "copying assets into deploy folder..."
 #清空和初始化部署目录
 
@@ -41,4 +44,7 @@ rm $BASEDIR/deploy/index.html.bak
 #2. remove .DS_Store (if any)
 find $BASEDIR/deploy -name .DS_Store -exec rm {} \;
 
+mv index.html index.ejs
+
 echo "code rolling well"
+
