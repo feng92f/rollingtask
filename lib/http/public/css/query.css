@@ -9,6 +9,8 @@
 
 #query-main{
   -webkit-overflow-scrolling: touch;
+  height: 100%;
+  overflow:auto;
 }
 
 .query-content{
